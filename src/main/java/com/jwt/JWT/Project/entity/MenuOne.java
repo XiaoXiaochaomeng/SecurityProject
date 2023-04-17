@@ -1,0 +1,51 @@
+package com.jwt.JWT.Project.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "Menuone")
+public class MenuOne implements Serializable {
+    // Thong tin menu id
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    // Thong tin ten menu
+    private String name;
+
+    // Thong tin ten dung de tim kiem
+    private String Namesearch;
+
+    // Thong tin danh muc
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "Cate_Id")
+    private Category category;
+
+    // Thong tin ngay tao
+    private String Createday;
+
+    // Thong tin ma nguoi tao
+    private int Personcreate;
+
+    // Thong tin ngay xoa
+    private String Deleteday;
+
+    // Thong tin nguoi xoa
+    private int Persondelete;
+
+    // Thong tin ngay cap nhat
+    private String Updateday;
+
+    // Thong tin ma nguoi cap nhat
+    private int Personupdate;
+
+}
