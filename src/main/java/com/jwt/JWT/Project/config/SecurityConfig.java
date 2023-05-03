@@ -20,13 +20,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     UserService userService;
 
-    // Phuong thuc ma hoa mat khau
-    @Autowired
-    BCryptPasswordEncoder pe;
-
     // Phuong thuc cap quyen
     @Autowired
-    private UserDetailsServiceImpl userDetailsService;
+    UserDetailsServiceImpl userDetailsService;
 
     /**
      * Cung cap quyen cho project
@@ -74,19 +70,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().and().rememberMe().tokenValiditySeconds(86400);
     }
 
-    /**
-     * Cung cap phuong thuc ma hoa
-     *
-     * @return phuong thuc ma hoa
-     */
-    @Bean
-    public BCryptPasswordEncoder getPasswordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        // TODO Auto-generated method stub
         web.ignoring().antMatchers(HttpMethod.OPTIONS, "/**");
     }
 }

@@ -3,6 +3,7 @@ package com.jwt.JWT.Project.service.Impl;
 import com.jwt.JWT.Project.service.RoleService;
 import com.jwt.JWT.Project.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -25,8 +26,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private RoleService roleService;
 
-    @Autowired
-    private BCryptPasswordEncoder pe;
+    BCryptPasswordEncoder pe = new  BCryptPasswordEncoder();
 
     /**
      * Cung cap quyen cho project

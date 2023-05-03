@@ -16,7 +16,7 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
-    UserRepository userDao;
+    private UserRepository userDao;
 
     /**
      * Tim user bang email truyen vao
@@ -42,7 +42,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> findAll() {
-        // TODO Auto-generated method stub
         return userDao.findAll();
     }
 

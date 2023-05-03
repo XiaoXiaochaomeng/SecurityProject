@@ -12,7 +12,7 @@ import java.util.List;
 public class RoleServiceImpl implements RoleService {
     // Thong tin role dao
     @Autowired
-    RoleRepository roleRepository;
+    private RoleRepository roleRepository;
 
     /**
      * Tim kiem role theo id cua role

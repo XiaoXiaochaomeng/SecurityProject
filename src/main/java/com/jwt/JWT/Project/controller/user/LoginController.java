@@ -21,11 +21,11 @@ import javax.servlet.http.HttpServletRequest;
 public class LoginController {
     // Trinh bat loi form
     @Autowired
-    LoginFormValidator loginFormValidator;
+    private LoginFormValidator loginFormValidator;
 
     // Cung cap cac dich vu cho lop user
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     /**
      * Rang buoc form voi trinh bat loi
