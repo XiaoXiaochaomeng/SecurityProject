@@ -53,6 +53,11 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user")
     List<UserRole> listUserRole;
 
+    // Danh sach Employee
+    // @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+    List<Employee> listEmployee;
+
     // Danh sach dia chi
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
