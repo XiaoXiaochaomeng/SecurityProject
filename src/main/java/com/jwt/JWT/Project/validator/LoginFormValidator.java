@@ -1,7 +1,6 @@
 package com.jwt.JWT.Project.validator;
 
 import com.jwt.JWT.Project.dto.UserLogin;
-import com.jwt.JWT.Project.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
