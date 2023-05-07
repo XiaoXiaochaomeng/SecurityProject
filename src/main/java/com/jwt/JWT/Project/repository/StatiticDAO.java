@@ -1,5 +1,8 @@
 package com.jwt.JWT.Project.repository;
 
+import com.jwt.JWT.Project.dto.StatisticalForMonthProjections;
+import com.jwt.JWT.Project.dto.StatisticalForProductProjections;
+import com.jwt.JWT.Project.dto.StatisticalForYearProjections;
 import com.jwt.JWT.Project.entity.Statitics;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

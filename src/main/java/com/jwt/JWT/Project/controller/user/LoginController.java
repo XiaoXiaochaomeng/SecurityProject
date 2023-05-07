@@ -1,7 +1,6 @@
 package com.jwt.JWT.Project.controller.user;
 
 import com.jwt.JWT.Project.common.Constants;
-import com.jwt.JWT.Project.dto.UserLogin;
 import com.jwt.JWT.Project.validator.LoginFormValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

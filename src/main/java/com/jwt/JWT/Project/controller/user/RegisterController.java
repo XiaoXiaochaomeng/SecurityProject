@@ -1,7 +1,6 @@
 package com.jwt.JWT.Project.controller.user;
 
 import com.jwt.JWT.Project.common.Constants;
-import com.jwt.JWT.Project.dto.UserRegister;
 import com.jwt.JWT.Project.service.*;
 import com.jwt.JWT.Project.validator.RegisterFormValidator;
 import org.springframework.beans.factory.annotation.Autowired;

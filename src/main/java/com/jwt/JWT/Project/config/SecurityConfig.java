@@ -1,6 +1,9 @@
 package com.jwt.JWT.Project.config;
 
+import com.websiteshop.entity.Account;
+import com.websiteshop.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -8,67 +11,84 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import java.util.NoSuchElementException;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    // Thong tin User Service
     @Autowired
-    UserService userService;
+    AccountService accountService;
+    @Autowired
+    BCryptPasswordEncoder pe;
 
-    // Phuong thuc cap quyen
-    @Autowired
-    UserDetailsServiceImpl userDetailsService;
-
-    /**
-     * Cung cap quyen cho project
-     *
-     * @param auth
-     * @throws Exception
-     */
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService);
+    // Ma hoa password
+    @Bean
+    public BCryptPasswordEncoder getPasswordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 
-    /**
-     * Xu ly phan quyen nguoi dung
-     *
-     * @param http
-     * @throws exception
-     */
+    // Cung cap du lieu dang nhap
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(username -> {
+            try {
+                Optional<Account> user = accountService.findById(username);
+                String password = pe.encode(user.get().getPassword());
+                String[] roles = user.get().getAuthorities().stream()
+                        .map(er -> er.getRole().getRoleId())
+                        .collect(Collectors.toList()).toArray(new String[0]);
+                return User.withUsername(username).password(password).roles(roles).build();
+            } catch (NoSuchElementException e) {
+                throw new UsernameNotFoundException(username + "not Found");
+            }
+        });
+    }
+
+    // Phan quyen su dung
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
+        http.authorizeRequests()
+                .antMatchers("/assets/**", "/admin/dist/**").permitAll()
+                .antMatchers("/orderHistory/**", "/favorite/**", "/comments/**").authenticated()
+                .antMatchers("/admin/**").hasAnyRole("STAF", "DIRE")
+                .antMatchers("/authority", "/security/statitic", "/statistical").hasRole("DIRE")
+                .anyRequest().permitAll();
 
-        // Cac trang yeu cau quyen su dung la Admin hoac Director
-        http.authorizeRequests().antMatchers("/admin/**").access("hasAnyRole('ROLE_ADMIN', 'ROLE_DIRECTOR')");
+        http.formLogin()
+                .loginPage("/security/login/form")
+                .loginProcessingUrl("/security/login")
+                .defaultSuccessUrl("/security/login/success", false)
+                .failureUrl("/security/login/error");
 
-        http.authorizeRequests().antMatchers("/shop/profile/**","/shop/favorite/**" ,"/shop/cart/checkout", "/account", "/account/**", "/rest/favorite/add/**")
-                .access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN', 'ROLE_DIRECTOR')");
+        http.rememberMe().tokenValiditySeconds(86400);
 
-        // Các trang không yêu cầu login
-        http.authorizeRequests().anyRequest().permitAll();
+        http.exceptionHandling().accessDeniedPage("/security/unauthoried");
 
-        // Khi người dùng đã login, với vai trò XX.
-        // Nhưng truy cập vào trang yêu cầu vai trò YY,
-        // Ngoại lệ AccessDeniedException sẽ ném ra.
-        http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/403page");
+        http.logout()
+                .logoutUrl("/security/logoff")
+                .logoutSuccessUrl("/security/logoff/success");
 
-        // Cau hinh cho form login
-        http.authorizeRequests().and().formLogin().loginPage("/login").usernameParameter("username")
-                .passwordParameter("password").failureForwardUrl("/login").defaultSuccessUrl("/login/success", false);
+        http.oauth2Login()
+                .loginPage("/security/login/form")
+                .defaultSuccessUrl("/oauth2/login/success", true)
+                .failureUrl("/security/login/error")
+                .authorizationEndpoint()
+                .baseUri("/oauth2/authorization");
 
-        // Cau hinh dang xuat khoi chuong trinh
-        http.authorizeRequests().and().logout().logoutUrl("/logout").logoutSuccessUrl("/index");
-
-        // Cau hinh remember me
-        http.authorizeRequests().and().rememberMe().tokenValiditySeconds(86400);
     }
 
-
+    // Cho phep truy xuat Rest API ben ngoai Domain khac
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers(HttpMethod.OPTIONS, "/**");
     }
+
 }
