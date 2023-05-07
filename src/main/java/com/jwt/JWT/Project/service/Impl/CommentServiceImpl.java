@@ -1,8 +1,8 @@
 package com.jwt.JWT.Project.service.Impl;
 
-import com.websiteshop.dao.CommentDAO;
-import com.websiteshop.entity.Comment;
-import com.websiteshop.service.CommentService;
+import com.jwt.JWT.Project.entity.Comment;
+import com.jwt.JWT.Project.repository.CommentDAO;
+import com.jwt.JWT.Project.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

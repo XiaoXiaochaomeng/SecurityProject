@@ -1,9 +1,9 @@
 
 package com.jwt.JWT.Project.service.Impl;
 
-import com.websiteshop.dao.OrderDetailDAO;
-import com.websiteshop.entity.OrderDetail;
-import com.websiteshop.service.OrderDetailService;
+import com.jwt.JWT.Project.entity.OrderDetail;
+import com.jwt.JWT.Project.repository.OrderDetailDAO;
+import com.jwt.JWT.Project.service.OrderDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;

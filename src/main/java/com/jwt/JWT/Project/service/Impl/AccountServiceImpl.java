@@ -1,7 +1,8 @@
-
 package com.jwt.JWT.Project.service.Impl;
 
 import com.jwt.JWT.Project.entity.Account;
+import com.jwt.JWT.Project.entity.Authority;
+import com.jwt.JWT.Project.entity.Role;
 import com.jwt.JWT.Project.repository.AccountDAO;
 import com.jwt.JWT.Project.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;

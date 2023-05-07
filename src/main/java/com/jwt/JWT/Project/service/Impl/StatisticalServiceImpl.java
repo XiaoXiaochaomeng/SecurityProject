@@ -1,11 +1,11 @@
 package com.jwt.JWT.Project.service.Impl;
 
-import com.websiteshop.dao.StatiticDAO;
-import com.websiteshop.entity.Statitics;
-import com.websiteshop.model.StatisticalForMonthProjections;
-import com.websiteshop.model.StatisticalForProductProjections;
-import com.websiteshop.model.StatisticalForYearProjections;
-import com.websiteshop.service.StatisticalService;
+import com.jwt.JWT.Project.dto.StatisticalForMonthProjections;
+import com.jwt.JWT.Project.dto.StatisticalForProductProjections;
+import com.jwt.JWT.Project.dto.StatisticalForYearProjections;
+import com.jwt.JWT.Project.entity.Statitics;
+import com.jwt.JWT.Project.repository.StatiticDAO;
+import com.jwt.JWT.Project.service.StatisticalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,8 +1,8 @@
 package com.jwt.JWT.Project.service.Impl;
 
-import com.websiteshop.dao.RoleDAO;
-import com.websiteshop.entity.Role;
-import com.websiteshop.service.RoleService;
+import com.jwt.JWT.Project.entity.Role;
+import com.jwt.JWT.Project.repository.RoleDAO;
+import com.jwt.JWT.Project.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

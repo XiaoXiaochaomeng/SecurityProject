@@ -1,6 +1,7 @@
 package com.jwt.JWT.Project.service;
 
-import com.websiteshop.entity.Role;
+
+import com.jwt.JWT.Project.entity.Role;
 
 import java.util.List;
 

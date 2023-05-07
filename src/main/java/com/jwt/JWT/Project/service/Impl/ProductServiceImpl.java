@@ -1,8 +1,8 @@
 package com.jwt.JWT.Project.service.Impl;
 
-import com.websiteshop.dao.ProductDAO;
-import com.websiteshop.entity.Product;
-import com.websiteshop.service.ProductService;
+import com.jwt.JWT.Project.entity.Product;
+import com.jwt.JWT.Project.repository.ProductDAO;
+import com.jwt.JWT.Project.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

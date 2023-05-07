@@ -1,6 +1,6 @@
 package com.jwt.JWT.Project.service;
 
-import com.websiteshop.entity.Authority;
+import com.jwt.JWT.Project.entity.Authority;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

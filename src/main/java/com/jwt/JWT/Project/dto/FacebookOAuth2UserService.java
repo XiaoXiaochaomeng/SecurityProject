@@ -1,9 +1,9 @@
 package com.jwt.JWT.Project.dto;
 
-import com.websiteshop.entity.Account;
-import com.websiteshop.entity.Authority;
-import com.websiteshop.entity.Role;
-import com.websiteshop.service.AccountService;
+import com.jwt.JWT.Project.entity.Account;
+import com.jwt.JWT.Project.entity.Authority;
+import com.jwt.JWT.Project.entity.Role;
+import com.jwt.JWT.Project.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;

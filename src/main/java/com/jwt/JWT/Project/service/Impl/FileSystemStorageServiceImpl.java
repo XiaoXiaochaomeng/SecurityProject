@@ -1,9 +1,9 @@
 package com.jwt.JWT.Project.service.Impl;
 
-import com.websiteshop.config.StorageProperties;
-import com.websiteshop.exception.StorageException;
-import com.websiteshop.exception.StorageFileNotFoundException;
-import com.websiteshop.service.StorageService;
+import com.jwt.JWT.Project.config.StorageProperties;
+import com.jwt.JWT.Project.exception.StorageException;
+import com.jwt.JWT.Project.exception.StorageFileNotFoundException;
+import com.jwt.JWT.Project.service.StorageService;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;

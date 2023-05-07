@@ -1,9 +1,9 @@
 package com.jwt.JWT.Project.service;
 
-import com.websiteshop.entity.Statitics;
-import com.websiteshop.model.StatisticalForMonthProjections;
-import com.websiteshop.model.StatisticalForProductProjections;
-import com.websiteshop.model.StatisticalForYearProjections;
+import com.jwt.JWT.Project.dto.StatisticalForMonthProjections;
+import com.jwt.JWT.Project.dto.StatisticalForProductProjections;
+import com.jwt.JWT.Project.dto.StatisticalForYearProjections;
+import com.jwt.JWT.Project.entity.Statitics;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

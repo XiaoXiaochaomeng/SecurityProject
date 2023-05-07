@@ -1,6 +1,6 @@
 package com.jwt.JWT.Project.service.Impl;
 
-import com.websiteshop.service.UploadService;
+import com.jwt.JWT.Project.service.UploadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;

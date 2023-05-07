@@ -1,6 +1,6 @@
 package com.jwt.JWT.Project.config;
 
-import com.websiteshop.interceptor.GlobalInterceptor;
+import com.jwt.JWT.Project.interceptor.GlobalInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;

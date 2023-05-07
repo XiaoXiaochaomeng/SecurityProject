@@ -1,8 +1,8 @@
 package com.jwt.JWT.Project.service.Impl;
 
-import com.websiteshop.dao.FavoriteDAO;
-import com.websiteshop.entity.Favorite;
-import com.websiteshop.service.FavoriteService;
+import com.jwt.JWT.Project.entity.Favorite;
+import com.jwt.JWT.Project.repository.FavoriteDAO;
+import com.jwt.JWT.Project.service.FavoriteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
