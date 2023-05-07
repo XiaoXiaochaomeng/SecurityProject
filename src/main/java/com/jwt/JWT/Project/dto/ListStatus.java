@@ -2,12 +2,12 @@ package com.jwt.JWT.Project.dto;
 
 import java.io.Serializable;
 
-public class listStatus implements Serializable{
+public class ListStatus implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private int id;
 	private String status;
 	private Long orderId;
-	public listStatus(int id, String status, Long orderId) {
+	public ListStatus(int id, String status, Long orderId) {
 		super();
 		this.id = id;
 		this.status = status;
@@ -31,7 +31,7 @@ public class listStatus implements Serializable{
 	public void setOrderId(Long orderId) {
 		this.orderId = orderId;
 	}
-	public listStatus() {
+	public ListStatus() {
 		super();
 	}
 
