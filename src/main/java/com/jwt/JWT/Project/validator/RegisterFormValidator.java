@@ -1,7 +1,6 @@
 package com.jwt.JWT.Project.validator;
 
 import com.jwt.JWT.Project.dto.UserRegister;
-import com.jwt.JWT.Project.entity.User;
 import com.jwt.JWT.Project.service.UserService;
 import org.apache.commons.validator.routines.EmailValidator;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -2,9 +2,6 @@ package com.jwt.JWT.Project.controller.user;
 
 import com.jwt.JWT.Project.common.Constants;
 import com.jwt.JWT.Project.dto.UserRegister;
-import com.jwt.JWT.Project.entity.Role;
-import com.jwt.JWT.Project.entity.User;
-import com.jwt.JWT.Project.entity.UserRole;
 import com.jwt.JWT.Project.service.*;
 import com.jwt.JWT.Project.validator.RegisterFormValidator;
 import org.springframework.beans.factory.annotation.Autowired;

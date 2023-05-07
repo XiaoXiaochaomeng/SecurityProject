@@ -1,8 +1,6 @@
 package com.jwt.JWT.Project.service;
 
 
-import com.jwt.JWT.Project.entity.UserRole;
-
 import java.util.List;
 
 public interface UserRoleService {

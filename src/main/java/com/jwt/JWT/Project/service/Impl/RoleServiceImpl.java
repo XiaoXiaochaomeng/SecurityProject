@@ -1,6 +1,5 @@
 package com.jwt.JWT.Project.service.Impl;
 
-import com.jwt.JWT.Project.entity.Role;
 import com.jwt.JWT.Project.repository.RoleRepository;
 import com.jwt.JWT.Project.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;

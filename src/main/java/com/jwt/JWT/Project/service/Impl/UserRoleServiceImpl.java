@@ -1,8 +1,5 @@
 package com.jwt.JWT.Project.service.Impl;
 
-import com.jwt.JWT.Project.entity.Employee;
-import com.jwt.JWT.Project.entity.User;
-import com.jwt.JWT.Project.entity.UserRole;
 import com.jwt.JWT.Project.repository.EmployeeRepository;
 import com.jwt.JWT.Project.repository.UserRepository;
 import com.jwt.JWT.Project.repository.UserRoleRepository;

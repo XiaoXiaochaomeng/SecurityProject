@@ -2,7 +2,6 @@ package com.jwt.JWT.Project.service;
 
 import com.jwt.JWT.Project.dto.ChangePassModel;
 import com.jwt.JWT.Project.dto.InformationModel;
-import com.jwt.JWT.Project.entity.User;
 
 import java.util.List;
 

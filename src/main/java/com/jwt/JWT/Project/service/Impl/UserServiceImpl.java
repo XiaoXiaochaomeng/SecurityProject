@@ -2,7 +2,6 @@ package com.jwt.JWT.Project.service.Impl;
 
 import com.jwt.JWT.Project.dto.ChangePassModel;
 import com.jwt.JWT.Project.dto.InformationModel;
-import com.jwt.JWT.Project.entity.User;
 import com.jwt.JWT.Project.repository.UserRepository;
 import com.jwt.JWT.Project.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
