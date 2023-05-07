@@ -1,7 +1,7 @@
 package com.jwt.JWT.Project.config;
 
-import com.websiteshop.entity.Account;
-import com.websiteshop.service.AccountService;
+import com.jwt.JWT.Project.entity.Account;
+import com.jwt.JWT.Project.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,6 +24,7 @@ import java.util.stream.Collectors;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     AccountService accountService;
+
     @Autowired
     BCryptPasswordEncoder pe;
 

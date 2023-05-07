@@ -1,6 +1,6 @@
 package com.jwt.JWT.Project.service;
 
-import com.websiteshop.entity.Comment;
+import com.jwt.JWT.Project.entity.Comment;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

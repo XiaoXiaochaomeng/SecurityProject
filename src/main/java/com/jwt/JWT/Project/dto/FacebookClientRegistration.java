@@ -1,5 +1,8 @@
 package com.jwt.JWT.Project.dto;
 
+import org.springframework.security.oauth2.client.registration.ClientRegistration;
+import org.springframework.security.oauth2.core.AuthorizationGrantType;
+import org.springframework.security.oauth2.core.ClientAuthenticationMethod;
 
 public class FacebookClientRegistration {
 

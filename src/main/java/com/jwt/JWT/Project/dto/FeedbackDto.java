@@ -1,6 +1,6 @@
 package com.jwt.JWT.Project.dto;
 
-import com.websiteshop.entity.Account;
+import com.jwt.JWT.Project.entity.Account;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,11 +1,9 @@
 
 package com.jwt.JWT.Project.service.Impl;
 
-import com.websiteshop.dao.AccountDAO;
-import com.websiteshop.entity.Account;
-import com.websiteshop.entity.Authority;
-import com.websiteshop.entity.Role;
-import com.websiteshop.service.AccountService;
+import com.jwt.JWT.Project.entity.Account;
+import com.jwt.JWT.Project.repository.AccountDAO;
+import com.jwt.JWT.Project.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;

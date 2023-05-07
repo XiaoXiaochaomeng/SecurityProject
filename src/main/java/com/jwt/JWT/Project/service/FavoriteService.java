@@ -1,6 +1,7 @@
 package com.jwt.JWT.Project.service;
 
-import com.websiteshop.entity.Favorite;
+
+import com.jwt.JWT.Project.entity.Favorite;
 
 import java.util.List;
 import java.util.Optional;

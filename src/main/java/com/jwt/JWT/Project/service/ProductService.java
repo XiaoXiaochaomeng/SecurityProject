@@ -1,6 +1,6 @@
 package com.jwt.JWT.Project.service;
 
-import com.websiteshop.entity.Product;
+import com.jwt.JWT.Project.entity.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;

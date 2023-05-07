@@ -1,7 +1,7 @@
 package com.jwt.JWT.Project.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.websiteshop.entity.Order;
+import com.jwt.JWT.Project.entity.Order;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
