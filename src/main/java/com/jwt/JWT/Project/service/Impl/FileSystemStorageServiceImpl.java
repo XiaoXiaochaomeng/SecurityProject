@@ -18,7 +18,6 @@ import java.nio.file.StandardCopyOption;
 
 @Service
 public class FileSystemStorageServiceImpl implements StorageService {
-
 	private final Path rootLocation;
 
 	@Override
