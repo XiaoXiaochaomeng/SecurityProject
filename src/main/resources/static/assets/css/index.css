@@ -146,7 +146,7 @@ nav ul li a label {
 
   /*-------------------menu bar----------*/
   .menu-bar {
-    background-color: rgb(219, 231, 225);
+    background-color: rgb(227 165 229);
     width: 100%;
   }
 
@@ -168,7 +168,6 @@ nav ul li a label {
   .menu-bar ul li {
     padding: 12px 25px;
     transition: transform 0.5s;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 2px;
   }
 
   .menu-bar ul li:hover {
